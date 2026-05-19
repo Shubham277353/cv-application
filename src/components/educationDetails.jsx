@@ -1,4 +1,6 @@
 import { useState } from "react";
+import '../styles/education.css';
+
 
 export default function Education() {
   const [isEditing, setIsEditing] = useState(true);
@@ -13,6 +15,7 @@ export default function Education() {
       >
         Institute : {}
         <input
+        value={info.institue}
           placeholder="Guru gobind college"
           type="text"
           onChange={(e) => {
@@ -21,6 +24,7 @@ export default function Education() {
         />
         {} Course : {}
         <input
+        value={info.course}
           placeholder="MCA"
           type="text"
           onChange={(e) => {
@@ -29,6 +33,7 @@ export default function Education() {
         />
         {} Start Date : {}
         <input
+        value={info.startDate}
           type="date"
           onChange={(e) => {
             setInfo({ ...info, startDate: e.target.value });
@@ -37,6 +42,7 @@ export default function Education() {
         {} End Date : {}
         <input
           type="date"
+          value={info.endDate}
           onChange={(e) => {
             setInfo({ ...info, endDate: e.target.value });
           }}

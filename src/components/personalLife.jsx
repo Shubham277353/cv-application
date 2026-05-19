@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/personalLife.css";
 
 export default function PersonalLife() {
   const [isEditing, setIsEditing] = useState(true);
@@ -7,34 +8,47 @@ export default function PersonalLife() {
   if (isEditing) {
     return (
       <form
+        className="personal-form"
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        Full Name : {}
-        <input
-          placeholder="John Doe"
-          type="text"
-          onChange={(e) => {
-            setInfo({ ...info, name: e.target.value });
-          }}
-        />
-        {} Email : {}
-        <input
-          placeholder="johndoe@email.com"
-          type="email"
-          onChange={(e) => {
-            setInfo({ ...info, email: e.target.value });
-          }}
-        />
-        {} Phone No. : {}
-        <input
-          placeholder="123456789"
-          type="number"
-          onChange={(e) => {
-            setInfo({ ...info, phone: e.target.value });
-          }}
-        />
+        <label htmlFor="">
+          Full Name : {}
+          <input
+            placeholder="John Doe"
+            type="text"
+            value={info.name}
+            onChange={(e) => {
+              setInfo({ ...info, name: e.target.value });
+            }}
+          />
+        </label>
+
+        <label htmlFor="">
+          {} Email : {}
+          <input
+            placeholder="johndoe@email.com"
+            type="email"
+            value={info.email}
+            onChange={(e) => {
+              setInfo({ ...info, email: e.target.value });
+            }}
+          />
+        </label>
+
+        <label htmlFor="">
+          {} Phone No. : {}
+          <input
+            placeholder="123456789"
+            type="number"
+            value={info.phone}
+            onChange={(e) => {
+              setInfo({ ...info, phone: e.target.value });
+            }}
+          />
+        </label>
+
         <button
           onClick={() => {
             setIsEditing(false);
@@ -42,6 +56,7 @@ export default function PersonalLife() {
         >
           Submit
         </button>
+
       </form>
     );
   }
