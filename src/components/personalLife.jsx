@@ -13,6 +13,7 @@ export default function PersonalLife() {
           e.preventDefault();
         }}
       >
+        <h1>Personal Details: </h1>
         <label htmlFor="">
           Full Name : {}
           <input

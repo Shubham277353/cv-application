@@ -1,59 +1,76 @@
 import { useState } from "react";
-import '../styles/experience.css';
+import "../styles/experience.css";
 
 export default function Experience() {
   const [isEditing, setIsEditing] = useState(true);
-  const [info, setInfo] = useState({ compName: "", jobRole: "",responsibility:"", startDate: "", endDate: "" });
+  const [info, setInfo] = useState({
+    compName: "",
+    jobRole: "",
+    responsibility: "",
+    startDate: "",
+    endDate: "",
+  });
 
   if (isEditing) {
     return (
-      <form
+      <form className="experience-form"
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        Company Name: 
-        <input
-          placeholder="Google"
-          type="text"
-          value={info.compName}
-          onChange={(e) => {
-            setInfo({ ...info, compName: e.target.value });
-          }}
-        />
-         Job Role: 
-        <input
-          placeholder="SDE2"
-          type="text"
-          value={info.jobRole}
-          onChange={(e) => {
-            setInfo({ ...info, jobRole: e.target.value });
-          }}
-        />
-         Responsibility:
-        <input
-          type="text"
-          value={info.responsibility}
-          onChange={(e) => {
-            setInfo({ ...info, responsibility: e.target.value });
-          }}
-        />
-         Start Date: 
-        <input
-          type="date"
-          value={info.startDate}
-          onChange={(e) => {
-            setInfo({ ...info, startDate: e.target.value });
-          }}
-        />
-         End Date: 
-        <input
-          type="date"
-          value={info.endDate}
-          onChange={(e) => {
-            setInfo({ ...info, endDate: e.target.value });
-          }}
-        />
+        <h1>Experience Details: </h1>
+        <label htmlFor="">
+          Company Name:
+          <input
+            placeholder="Google"
+            type="text"
+            value={info.compName}
+            onChange={(e) => {
+              setInfo({ ...info, compName: e.target.value });
+            }}
+          />
+        </label>
+        <label htmlFor="">
+          Job Role:
+          <input
+            placeholder="SDE2"
+            type="text"
+            value={info.jobRole}
+            onChange={(e) => {
+              setInfo({ ...info, jobRole: e.target.value });
+            }}
+          />
+        </label>
+        <label htmlFor="">
+          Responsibility:
+          <input
+            type="text"
+            value={info.responsibility}
+            onChange={(e) => {
+              setInfo({ ...info, responsibility: e.target.value });
+            }}
+          />
+        </label>
+        <label htmlFor="">
+          Start Date:
+          <input
+            type="date"
+            value={info.startDate}
+            onChange={(e) => {
+              setInfo({ ...info, startDate: e.target.value });
+            }}
+          />
+        </label>
+        <label htmlFor="">
+          End Date:
+          <input
+            type="date"
+            value={info.endDate}
+            onChange={(e) => {
+              setInfo({ ...info, endDate: e.target.value });
+            }}
+          />
+        </label>
         <button
           onClick={() => {
             setIsEditing(false);

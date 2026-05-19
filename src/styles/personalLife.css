@@ -1,8 +1,8 @@
 .personal-form{
     display: flex;
-    flex-direction: column;
-}
-
-input{
-    width: 200px;
+    font-size: 1.1rem;
+    border: var(--border);
+    padding: 2%;
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }

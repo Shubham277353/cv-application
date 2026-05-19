@@ -1,0 +1,8 @@
+.education-form {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+  border: var(--border);
+  padding: 2%;
+  gap: var(--space-md);
+}

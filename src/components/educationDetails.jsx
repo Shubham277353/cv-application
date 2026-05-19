@@ -1,52 +1,68 @@
 import { useState } from "react";
-import '../styles/education.css';
-
+import "../styles/education.css";
 
 export default function Education() {
   const [isEditing, setIsEditing] = useState(true);
-  const [info, setInfo] = useState({ institue: "", course: "", startDate: "", endDate: "" });
+  const [info, setInfo] = useState({
+    institue: "",
+    course: "",
+    startDate: "",
+    endDate: "",
+  });
 
   if (isEditing) {
     return (
       <form
+        className="education-form"
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        Institute : {}
-        <input
-        value={info.institue}
-          placeholder="Guru gobind college"
-          type="text"
-          onChange={(e) => {
-            setInfo({ ...info, institue: e.target.value });
-          }}
-        />
-        {} Course : {}
-        <input
-        value={info.course}
-          placeholder="MCA"
-          type="text"
-          onChange={(e) => {
-            setInfo({ ...info, course: e.target.value });
-          }}
-        />
-        {} Start Date : {}
-        <input
-        value={info.startDate}
-          type="date"
-          onChange={(e) => {
-            setInfo({ ...info, startDate: e.target.value });
-          }}
-        />
-        {} End Date : {}
-        <input
-          type="date"
-          value={info.endDate}
-          onChange={(e) => {
-            setInfo({ ...info, endDate: e.target.value });
-          }}
-        />
+        <h1>Experience Details: </h1>
+
+        <label htmlFor="">
+          Institute : {}
+          <input
+            value={info.institue}
+            placeholder="Guru gobind college"
+            type="text"
+            onChange={(e) => {
+              setInfo({ ...info, institue: e.target.value });
+            }}
+          />
+        </label>
+        <label htmlFor="">
+          {} Course : {}
+          <input
+            value={info.course}
+            placeholder="MCA"
+            type="text"
+            onChange={(e) => {
+              setInfo({ ...info, course: e.target.value });
+            }}
+          />
+        </label>
+        <label htmlFor="">
+          {} Start Date : {}
+          <input
+            value={info.startDate}
+            type="date"
+            onChange={(e) => {
+              setInfo({ ...info, startDate: e.target.value });
+            }}
+          />
+        </label>
+        <label htmlFor="">
+          {} End Date : {}
+          <input
+            type="date"
+            value={info.endDate}
+            onChange={(e) => {
+              setInfo({ ...info, endDate: e.target.value });
+            }}
+          />
+        </label>
+
         <button
           onClick={() => {
             setIsEditing(false);
