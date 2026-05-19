@@ -13,12 +13,13 @@ export default function Experience() {
 
   if (isEditing) {
     return (
-      <form className="experience-form"
+      <form
+        className="experience-form"
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        <h1>Experience Details: </h1>
+        <h1 className="form-heading">Experience Details </h1>
         <label htmlFor="">
           Company Name:
           <input

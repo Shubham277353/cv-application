@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/personalLife.css";
+import { FileX, Mail, Phone  } from 'lucide-react';
 
 export default function PersonalLife() {
   const [isEditing, setIsEditing] = useState(true);
@@ -13,7 +14,7 @@ export default function PersonalLife() {
           e.preventDefault();
         }}
       >
-        <h1>Personal Details: </h1>
+        <h1 className="form-heading">Personal Details </h1>
         <label htmlFor="">
           Full Name : {}
           <input
@@ -57,16 +58,26 @@ export default function PersonalLife() {
         >
           Submit
         </button>
-
       </form>
     );
   }
 
   return (
     <div className="personal-info">
-      <h2>{info.name}</h2>
-      <p>{info.email}</p>
-      <p>{info.phone}</p>
+      <h2>{"Shubham Bhandari"}</h2>
+      <hr style={{ borderTop: "1px solid white", width: "70%" }} />
+
+      <div className="contact-info">
+        <div className="icon-cont">
+          <Mail size={20} />
+          <p>{"goluboi@gmail.com"}</p>
+        </div>
+        <p>|</p>
+        <div className="icon-cont">
+          <Phone size={20} />
+          <p>{7843924832}</p>
+        </div>
+      </div>
       <button
         onClick={() => {
           setIsEditing(true);

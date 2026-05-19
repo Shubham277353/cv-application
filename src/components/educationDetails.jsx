@@ -18,58 +18,56 @@ export default function Education() {
           e.preventDefault();
         }}
       >
-        <h1>Experience Details: </h1>
-
-        <label htmlFor="">
-          Institute : {}
-          <input
-            value={info.institue}
-            placeholder="Guru gobind college"
-            type="text"
-            onChange={(e) => {
-              setInfo({ ...info, institue: e.target.value });
+        <h1 className="form-heading">Education Details </h1>
+          <label htmlFor="">
+            Institute : {}
+            <input
+              value={info.institue}
+              placeholder="Guru gobind college"
+              type="text"
+              onChange={(e) => {
+                setInfo({ ...info, institue: e.target.value });
+              }}
+            />
+          </label>
+          <label htmlFor="">
+            {} Course : {}
+            <input
+              value={info.course}
+              placeholder="MCA"
+              type="text"
+              onChange={(e) => {
+                setInfo({ ...info, course: e.target.value });
+              }}
+            />
+          </label>
+          <label htmlFor="">
+            {} Start Date : {}
+            <input
+              value={info.startDate}
+              type="date"
+              onChange={(e) => {
+                setInfo({ ...info, startDate: e.target.value });
+              }}
+            />
+          </label>
+          <label htmlFor="">
+            {} End Date : {}
+            <input
+              type="date"
+              value={info.endDate}
+              onChange={(e) => {
+                setInfo({ ...info, endDate: e.target.value });
+              }}
+            />
+          </label>
+          <button
+            onClick={() => {
+              setIsEditing(false);
             }}
-          />
-        </label>
-        <label htmlFor="">
-          {} Course : {}
-          <input
-            value={info.course}
-            placeholder="MCA"
-            type="text"
-            onChange={(e) => {
-              setInfo({ ...info, course: e.target.value });
-            }}
-          />
-        </label>
-        <label htmlFor="">
-          {} Start Date : {}
-          <input
-            value={info.startDate}
-            type="date"
-            onChange={(e) => {
-              setInfo({ ...info, startDate: e.target.value });
-            }}
-          />
-        </label>
-        <label htmlFor="">
-          {} End Date : {}
-          <input
-            type="date"
-            value={info.endDate}
-            onChange={(e) => {
-              setInfo({ ...info, endDate: e.target.value });
-            }}
-          />
-        </label>
-
-        <button
-          onClick={() => {
-            setIsEditing(false);
-          }}
-        >
-          Submit
-        </button>
+          >
+            Submit
+          </button>
       </form>
     );
   }
