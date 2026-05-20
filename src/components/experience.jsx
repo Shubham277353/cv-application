@@ -21,6 +21,8 @@ export default function Experience() {
     setInfo(updateInfo);
   }
 
+
+
   function handleMore() {
     const newEmptyObject = {
       compName: "",
@@ -41,10 +43,12 @@ export default function Experience() {
 
   function handleCheck(indexToUpdate) {
     const updateInfo = info.map((item, index) =>
-      index === indexToUpdate ? [{ ...info, curt: !item.curt }] : item,
+      index === indexToUpdate ? { ...item, curt: !item.curt } : item,
     );
     setInfo(updateInfo);
   }
+
+  console.log(info[0].curt);
 
   if (isEditing) {
     return (
@@ -104,17 +108,19 @@ export default function Experience() {
               <label htmlFor="">
                 End Date:
                 <input
-                  type="date"
-                  value={item.curt? "Currently Working" : info.endDate}
+                  type={item.curt ? "text" : "date"}
+                  value={item.curt ? "Currently Working" : item.endDate}
                   onChange={(e) => {
                     handleChange(index, "endDate", e.target.value);
                   }}
                 />
               </label>
+
               <div className="checkbox-group">
                 <input type="checkbox" onClick={() => handleCheck(index)} />
-                <label htmlFor="current">Currently Working</label>
+                <label htmlFor="">Currently Working</label>
               </div>
+
               {info.length > 1 ? (
                 <button
                   style={{ backgroundColor: "Red" }}
