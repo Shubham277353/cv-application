@@ -4,6 +4,31 @@
   flex-wrap: wrap;
   font-size: 1.1rem;
   /* border: var(--border); */
-  padding: 2% 5% 2% 5%;
+  padding: 0 5% 2% 5%;
+  gap: var(--space-md);
+}
+
+.education-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-lg);
+  /* justify-content: center; */
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+#education-h1 {
+  padding: 0 0 0 5%;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+}
+
+#add-submit-btn-container{
+  display: flex;
   gap: var(--space-md);
 }

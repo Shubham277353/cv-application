@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/personalLife.css";
-import { FileX, Mail, Phone  } from 'lucide-react';
+import { Mail, Phone  } from 'lucide-react';
 
 export default function PersonalLife() {
   const [isEditing, setIsEditing] = useState(true);
@@ -64,7 +64,7 @@ export default function PersonalLife() {
 
   return (
     <div className="personal-info">
-      <h2>{"Shubham Bhandari"}</h2>
+      <h1>{"Shubham Bhandari"}</h1>
       <hr style={{ borderTop: "1px solid white", width: "70%" }} />
 
       <div className="contact-info">
@@ -78,13 +78,13 @@ export default function PersonalLife() {
           <p>{7843924832}</p>
         </div>
       </div>
-      <button
-        onClick={() => {
-          setIsEditing(true);
-        }}
-      >
-        Edit
-      </button>
+        <button style={{width: "4rem",backgroundColor:"transparent"}}
+          onClick={() => {
+            setIsEditing(true);
+          }}
+        >
+          Edit
+        </button>
     </div>
   );
 }

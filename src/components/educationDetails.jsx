@@ -1,66 +1,108 @@
 import { useState } from "react";
 import "../styles/education.css";
+// import { FileMinusCorner } from "lucide-react";
 
 export default function Education() {
   const [isEditing, setIsEditing] = useState(true);
-  const [info, setInfo] = useState({
-    institue: "",
-    course: "",
-    startDate: "",
-    endDate: "",
-  });
+  const [info, setInfo] = useState([
+    {
+      institute: "",
+      course: "",
+      startDate: "",
+      endDate: "",
+    },
+  ]);
+
+  function handleChange(indexToUpdate, field, value) {
+    const updateInfo = info.map((item, index) =>
+      index === indexToUpdate ? { ...item, [field]: value } : item,
+    );
+    setInfo(updateInfo);
+  }
+
+  function handleMore() {
+    const newEmptyObject = {
+      institute: "",
+      course: "",
+      startDate: "",
+      endDate: "",
+    };
+    const newInfo = [...info, newEmptyObject];
+    setInfo(newInfo);
+  }
+
+  function deleteForm(indexToDelete) {
+    const updateInfo = info.filter((_, index) => index !== indexToDelete);
+    setInfo(updateInfo);
+  }
 
   if (isEditing) {
     return (
-      <form
-        className="education-form"
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <h1 className="form-heading">Education Details </h1>
-          <label htmlFor="">
-            Institute : {}
-            <input
-              value={info.institue}
-              placeholder="Guru gobind college"
-              type="text"
-              onChange={(e) => {
-                setInfo({ ...info, institue: e.target.value });
+      <div className="form-container">
+        <h1 id="education-h1">Education Details </h1>
+        {info.map((item, index) => {
+          return (
+            <form
+              className="education-form"
+              onSubmit={(e) => {
+                e.preventDefault();
               }}
-            />
-          </label>
-          <label htmlFor="">
-            {} Course : {}
-            <input
-              value={info.course}
-              placeholder="MCA"
-              type="text"
-              onChange={(e) => {
-                setInfo({ ...info, course: e.target.value });
-              }}
-            />
-          </label>
-          <label htmlFor="">
-            {} Start Date : {}
-            <input
-              value={info.startDate}
-              type="date"
-              onChange={(e) => {
-                setInfo({ ...info, startDate: e.target.value });
-              }}
-            />
-          </label>
-          <label htmlFor="">
-            {} End Date : {}
-            <input
-              type="date"
-              value={info.endDate}
-              onChange={(e) => {
-                setInfo({ ...info, endDate: e.target.value });
-              }}
-            />
-          </label>
+            >
+              <label htmlFor="">
+                Institute : {}
+                <input
+                  value={item.institute}
+                  placeholder="Guru gobind college"
+                  type="text"
+                  onChange={(e) => {
+                    handleChange(index, "institute", e.target.value);
+                  }}
+                />
+              </label>
+              <label htmlFor="">
+                {} Course : {}
+                <input
+                  value={item.course}
+                  placeholder="MCA"
+                  type="text"
+                  onChange={(e) => {
+                    handleChange(index, "course", e.target.value);
+                  }}
+                />
+              </label>
+              <label htmlFor="">
+                {} Start Date : {}
+                <input
+                  value={item.startDate}
+                  type="date"
+                  onChange={(e) => {
+                    handleChange(index, "startDate", e.target.value);
+                  }}
+                />
+              </label>
+              <label htmlFor="">
+                {} End Date : {}
+                <input
+                  type="date"
+                  value={item.endDate}
+                  onChange={(e) => {
+                    handleChange(index, "endDate", e.target.value);
+                  }}
+                />
+              </label>
+              <button
+                style={{ backgroundColor: "Red" }}
+                onClick={() => {
+                  deleteForm(index);
+                }}
+              >
+                Delete
+              </button>
+            </form>
+          );
+        })}
+        <div id="add-submit-btn-container">
+          <button onClick={handleMore}>Add More</button>
           <button
             onClick={() => {
               setIsEditing(false);
@@ -68,16 +110,25 @@ export default function Education() {
           >
             Submit
           </button>
-      </form>
+        </div>
+      </div>
     );
   }
 
   return (
-    <div className="personal-info">
-      <h2>{info.institue}</h2>
-      <p>{info.course}</p>
-      <p>{info.startDate}</p>
-      <p>{info.endDate}</p>
+    <div className="education-info">
+      <h1>Education</h1>
+      <hr style={{ borderTop: "1px solid black", width: "90%" }} />
+      {info.map((item) => {
+        return (
+          <div>
+            <h2>Institute: {"Guru Gobind Singh University"}</h2>
+            <p>Course: {"MCA"}</p>
+            <p>Start Date: {item.startDate}</p>
+            <p>End Date: {item.endDate}</p>
+          </div>
+        );
+      })}
       <button
         onClick={() => {
           setIsEditing(true);
