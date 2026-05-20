@@ -32,8 +32,10 @@ export default function Education() {
   }
 
   function deleteForm(indexToDelete) {
+    if(info.length > 1){
     const updateInfo = info.filter((_, index) => index !== indexToDelete);
     setInfo(updateInfo);
+    }
   }
 
   if (isEditing) {
@@ -43,6 +45,7 @@ export default function Education() {
         {info.map((item, index) => {
           return (
             <form
+            key={index}
               className="education-form"
               onSubmit={(e) => {
                 e.preventDefault();
@@ -117,15 +120,17 @@ export default function Education() {
 
   return (
     <div className="education-info">
-      <h1>Education</h1>
-      <hr style={{ borderTop: "1px solid black", width: "90%" }} />
+      <div>
+        <h1>Education</h1>
+        <hr style={{ borderTop: "1px solid black", width: "90%" }} />
+      </div>
       {info.map((item) => {
         return (
-          <div>
+          <div id="main-content">
             <h2>Institute: {"Guru Gobind Singh University"}</h2>
             <p>Course: {"MCA"}</p>
-            <p>Start Date: {item.startDate}</p>
-            <p>End Date: {item.endDate}</p>
+            <p>Start Date: 2026-05-01</p>
+            <p>End Date: 2026-05-01</p>
           </div>
         );
       })}
