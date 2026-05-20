@@ -78,7 +78,7 @@ export default function PersonalLife() {
           <p>{info.phone}</p>
         </div>
       </div>
-        <button style={{width: "4rem",backgroundColor:"transparent"}}
+        <button className="no-print" style={{width: "4rem",backgroundColor:"transparent"}}
           onClick={() => {
             setIsEditing(true);
           }}

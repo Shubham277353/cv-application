@@ -1,14 +1,17 @@
 import PersonalLife from "./components/personalLife";
 import Education from "./components/educationDetails";
 import Experience from "./components/experience";
-import './App.css';
+import "./App.css";
 
 function App() {
+
   return (
     <>
-      <PersonalLife />
-      <Education />
-      <Experience />
+      <div id="root-cv">
+        <PersonalLife />
+        <Education />
+        <Experience />
+      </div>
     </>
   );
 }

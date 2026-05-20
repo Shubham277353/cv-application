@@ -163,7 +163,7 @@ export default function Experience() {
       <div className="section-header">
         <h1 className="section-title">Experience</h1>
         <button
-          className="edit-btn"
+          className="edit-btn no-print"
           onClick={() => {
             setIsEditing(true);
           }}

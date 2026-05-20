@@ -135,7 +135,7 @@ export default function Education() {
     <div className="education-info">
       <div className="section-header">
         <h1 className="section-title">Education</h1>
-        <button className="edit-btn"
+        <button className="edit-btn no-print"
           onClick={() => {
             setIsEditing(true);
           }}
