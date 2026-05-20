@@ -15,7 +15,7 @@
   margin-top: var(--space-xl);
   gap: var(--space-xl);
   padding: 3% 3% 3% 5%;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 
 #education-h1 {
@@ -27,6 +27,7 @@
   flex-direction: column;
   gap: var(--space-md);
   padding-top: var(--space-xl);
+    margin-bottom: 48px;
 }
 
 .special-btns{
@@ -45,3 +46,4 @@
   flex-direction: column;
   gap: var(--space-md);
 }
+

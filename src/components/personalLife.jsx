@@ -8,57 +8,57 @@ export default function PersonalLife() {
 
   if (isEditing) {
     return (
-      <form
-        className="personal-form"
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <h1 className="form-heading">Personal Details </h1>
-        <label htmlFor="">
-          Full Name : {}
-          <input
-            placeholder="John Doe"
-            type="text"
-            value={info.name}
-            onChange={(e) => {
-              setInfo({ ...info, name: e.target.value });
-            }}
-          />
-        </label>
-
-        <label htmlFor="">
-          {} Email : {}
-          <input
-            placeholder="johndoe@email.com"
-            type="email"
-            value={info.email}
-            onChange={(e) => {
-              setInfo({ ...info, email: e.target.value });
-            }}
-          />
-        </label>
-
-        <label htmlFor="">
-          {} Phone No. : {}
-          <input
-            placeholder="123456789"
-            type="number"
-            value={info.phone}
-            onChange={(e) => {
-              setInfo({ ...info, phone: e.target.value });
-            }}
-          />
-        </label>
-
-        <button
-          onClick={() => {
-            setIsEditing(false);
+      <div>
+        <h1 className="personal-h1">Personal Details </h1>
+        <form
+          className="personal-form"
+          onSubmit={(e) => {
+            e.preventDefault();
           }}
         >
-          Submit
-        </button>
-      </form>
+          <label htmlFor="">
+            Full Name : {}
+            <input
+              placeholder="John Doe"
+              type="text"
+              value={info.name}
+              onChange={(e) => {
+                setInfo({ ...info, name: e.target.value });
+              }}
+            />
+          </label>
+          <label htmlFor="">
+            {} Email : {}
+            <input
+              placeholder="johndoe@email.com"
+              type="email"
+              value={info.email}
+              onChange={(e) => {
+                setInfo({ ...info, email: e.target.value });
+              }}
+            />
+          </label>
+          <label htmlFor="">
+            {} Phone No. : {}
+            <input
+              placeholder="123456789"
+              type="number"
+              value={info.phone}
+              onChange={(e) => {
+                setInfo({ ...info, phone: e.target.value });
+              }}
+            />
+          </label>
+          <button
+          style={{  padding: "10px 18px",fontSize: "0.95rem", margin: "0 auto"}}
+            onClick={() => {
+              setIsEditing(false);
+            }}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     );
   }
 

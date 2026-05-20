@@ -10,6 +10,7 @@ export default function Experience() {
       responsibility: "",
       startDate: "",
       endDate: "",
+      curt: false,
     },
   ]);
 
@@ -27,6 +28,7 @@ export default function Experience() {
       responsibility: "",
       startDate: "",
       endDate: "",
+      curt: "false",
     };
     const updateInfo = [...info, newEmptyObject];
     setInfo(updateInfo);
@@ -35,6 +37,13 @@ export default function Experience() {
   function handleDelete(indexToDelete) {
     const newInfo = info.filter((_, index) => index !== indexToDelete);
     setInfo(newInfo);
+  }
+
+  function handleCheck(indexToUpdate) {
+    const updateInfo = info.map((item, index) =>
+      index === indexToUpdate ? [{ ...info, curt: !item.curt }] : item,
+    );
+    setInfo(updateInfo);
   }
 
   if (isEditing) {
@@ -96,12 +105,16 @@ export default function Experience() {
                 End Date:
                 <input
                   type="date"
-                  value={info.endDate}
+                  value={item.curt? "Currently Working" : info.endDate}
                   onChange={(e) => {
                     handleChange(index, "endDate", e.target.value);
                   }}
                 />
               </label>
+              <div className="checkbox-group">
+                <input type="checkbox" onClick={() => handleCheck(index)} />
+                <label htmlFor="current">Currently Working</label>
+              </div>
               {info.length > 1 ? (
                 <button
                   style={{ backgroundColor: "Red" }}
@@ -144,7 +157,8 @@ export default function Experience() {
     <div className="experience-info">
       <div className="section-header">
         <h1 className="section-title">Experience</h1>
-        <button className="edit-btn"
+        <button
+          className="edit-btn"
           onClick={() => {
             setIsEditing(true);
           }}
@@ -152,7 +166,7 @@ export default function Experience() {
           Edit
         </button>
       </div>
-      <hr style={{ borderTop: "1px solid black", width: "95%" }} />
+      <hr style={{ borderTop: "1px solid #d1d5db", width: "95%" }} />
       <ul>
         {info.map((item, index) => {
           return (
@@ -165,7 +179,12 @@ export default function Experience() {
                 <strong>Responsibility:</strong> Managed the servers
               </p>
               <p>Start Date: {item.startDate}</p>
-              <p>End Date: {item.endDate}</p>
+
+              {item.curt ? (
+                <p>End Date: Currently Working</p>
+              ) : (
+                <p>End Date: {item.endDate}</p>
+              )}
             </li>
           );
         })}

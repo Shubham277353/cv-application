@@ -1,3 +1,5 @@
+
+
 *,
 *::after,
 *::before {
@@ -8,11 +10,11 @@
 }
 
 body{
-        background: #e5e7eb;
+        background: #f3f4f6;
 }
 
 #root {
-  width: 1000px;
+  width: 900px;
   max-width: 100%;
   margin: 0 auto;
   /* text-align: center; */

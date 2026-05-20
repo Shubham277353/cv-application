@@ -38,10 +38,17 @@ ul {
   border: 1px solid #d1d5db;
   border-radius: 10px;
   padding: 20px;
-  background: white;
   margin-bottom: 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+.main-content p {
+  color: #374151;
+}
+.main-content strong {
+  color: #111827;
+}
 .main-content h2 {
   font-size: 2rem;
 }
@@ -56,4 +63,14 @@ ul {
 .edit-btn {
   padding: 8px 18px;
   font-size: 0.95rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group input{
+  width: auto;
 }

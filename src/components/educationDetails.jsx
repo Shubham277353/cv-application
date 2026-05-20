@@ -143,13 +143,13 @@ export default function Education() {
           Edit
         </button>
       </div>
-      <hr style={{ borderTop: "1px solid black", width: "95%" }} />
+      <hr style={{ borderTop: "1px solid #d1d5db", width: "95%" }} />
 
       {info.map((item) => {
         return (
           <div className="main-content">
             <h2>Institute: {"Guru Gobind Singh University"}</h2>
-            <p>Course: {"MCA"}</p>
+            <p><strong>Course:</strong> {"MCA"}</p>
             <p>Start Date: 2026-05-01</p>
             <p>End Date: 2026-05-01</p>
           </div>
