@@ -20,10 +20,27 @@ export default function Experience() {
     setInfo(updateInfo);
   }
 
+  function handleMore() {
+    const newEmptyObject = {
+      compName: "",
+      jobRole: "",
+      responsibility: "",
+      startDate: "",
+      endDate: "",
+    };
+    const updateInfo = [...info, newEmptyObject];
+    setInfo(updateInfo);
+  }
+
+  function handleDelete(indexToDelete) {
+    const newInfo = info.filter((_, index) => index !== indexToDelete);
+    setInfo(newInfo);
+  }
+
   if (isEditing) {
     return (
-      <div>
-        <h1 className="form-heading">Experience Details </h1>
+      <div className="form-container">
+        <h1 id="experience-h1">Experience Details </h1>
 
         {info.map((item, index) => {
           return (
@@ -40,7 +57,7 @@ export default function Experience() {
                   type="text"
                   value={"Google"}
                   onChange={(e) => {
-                    setInfo(handleChange(index, "compName", e.target.value));
+                    handleChange(index, "compName", e.target.value);
                   }}
                 />
               </label>
@@ -51,7 +68,7 @@ export default function Experience() {
                   type="text"
                   value={info.jobRole}
                   onChange={(e) => {
-                    setInfo(handleChange(index, "jobRole", e.target.value));
+                    handleChange(index, "jobRole", e.target.value);
                   }}
                 />
               </label>
@@ -61,9 +78,7 @@ export default function Experience() {
                   type="text"
                   value={info.responsibility}
                   onChange={(e) => {
-                    setInfo(
-                      handleChange(index, "responsibility", e.target.value),
-                    );
+                    handleChange(index, "responsibility", e.target.value);
                   }}
                 />
               </label>
@@ -73,7 +88,7 @@ export default function Experience() {
                   type="date"
                   value={info.startDate}
                   onChange={(e) => {
-                    setInfo(handleChange(index, "startDate", e.target.value));
+                    handleChange(index, "startDate", e.target.value);
                   }}
                 />
               </label>
@@ -83,40 +98,78 @@ export default function Experience() {
                   type="date"
                   value={info.endDate}
                   onChange={(e) => {
-                    setInfo(handleChange(index, "endDate", e.target.value));
+                    handleChange(index, "endDate", e.target.value);
                   }}
                 />
               </label>
-              <button
-                onClick={() => {
-                  setIsEditing(false);
-                }}
-              >
-                Submit
-              </button>
+              {info.length > 1 ? (
+                <button
+                  style={{ backgroundColor: "Red" }}
+                  onClick={() => {
+                    handleDelete(index);
+                  }}
+                >
+                  Delete
+                </button>
+              ) : null}
             </form>
           );
         })}
+        <div id="add-submit-btn-container">
+          <button
+            style={{
+              backgroundColor: "transparent",
+              color: "#2563eb",
+              border: "1px solid #2563eb",
+            }}
+            className="special-btns"
+            onClick={handleMore}
+          >
+            Add More
+          </button>
+          <button
+            className="special-btns"
+            onClick={() => {
+              setIsEditing(false);
+            }}
+          >
+            Submit
+          </button>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="experience-info">
-      <h1>Experience</h1>
-      <hr style={{ borderTop: "1px solid black", width: "90%" }} />
-      <h2>{info.compName}</h2>
-      <p>{info.jobRole}</p>
-      <p>{info.responsibility}</p>
-      <p>{info.startDate}</p>
-      <p>{info.endDate}</p>
-      <button
-        onClick={() => {
-          setIsEditing(true);
-        }}
-      >
-        Edit
-      </button>
+      <div className="section-header">
+        <h1 className="section-title">Experience</h1>
+        <button className="edit-btn"
+          onClick={() => {
+            setIsEditing(true);
+          }}
+        >
+          Edit
+        </button>
+      </div>
+      <hr style={{ borderTop: "1px solid black", width: "95%" }} />
+      <ul>
+        {info.map((item, index) => {
+          return (
+            <li className="main-content" key={index}>
+              <h2>Google</h2>
+              <p>
+                <strong>Role:</strong> SDE2
+              </p>
+              <p>
+                <strong>Responsibility:</strong> Managed the servers
+              </p>
+              <p>Start Date: {item.startDate}</p>
+              <p>End Date: {item.endDate}</p>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

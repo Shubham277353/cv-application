@@ -32,9 +32,9 @@ export default function Education() {
   }
 
   function deleteForm(indexToDelete) {
-    if(info.length > 1){
-    const updateInfo = info.filter((_, index) => index !== indexToDelete);
-    setInfo(updateInfo);
+    if (info.length > 1) {
+      const updateInfo = info.filter((_, index) => index !== indexToDelete);
+      setInfo(updateInfo);
     }
   }
 
@@ -45,7 +45,7 @@ export default function Education() {
         {info.map((item, index) => {
           return (
             <form
-            key={index}
+              key={index}
               className="education-form"
               onSubmit={(e) => {
                 e.preventDefault();
@@ -93,20 +93,33 @@ export default function Education() {
                   }}
                 />
               </label>
-              <button
-                style={{ backgroundColor: "Red" }}
-                onClick={() => {
-                  deleteForm(index);
-                }}
-              >
-                Delete
-              </button>
+              {info.length > 1 ? (
+                <button
+                  style={{ backgroundColor: "Red" }}
+                  onClick={() => {
+                    deleteForm(index);
+                  }}
+                >
+                  Delete
+                </button>
+              ) : null}
             </form>
           );
         })}
         <div id="add-submit-btn-container">
-          <button onClick={handleMore}>Add More</button>
           <button
+            style={{
+              backgroundColor: "transparent",
+              color: "#2563eb",
+              border: "1px solid #2563eb",
+            }}
+            className="special-btns"
+            onClick={handleMore}
+          >
+            Add More
+          </button>
+          <button
+            className="special-btns"
             onClick={() => {
               setIsEditing(false);
             }}
@@ -120,13 +133,21 @@ export default function Education() {
 
   return (
     <div className="education-info">
-      <div>
-        <h1>Education</h1>
-        <hr style={{ borderTop: "1px solid black", width: "90%" }} />
+      <div className="section-header">
+        <h1 className="section-title">Education</h1>
+        <button className="edit-btn"
+          onClick={() => {
+            setIsEditing(true);
+          }}
+        >
+          Edit
+        </button>
       </div>
+      <hr style={{ borderTop: "1px solid black", width: "95%" }} />
+
       {info.map((item) => {
         return (
-          <div id="main-content">
+          <div className="main-content">
             <h2>Institute: {"Guru Gobind Singh University"}</h2>
             <p>Course: {"MCA"}</p>
             <p>Start Date: 2026-05-01</p>
@@ -134,13 +155,6 @@ export default function Education() {
           </div>
         );
       })}
-      <button
-        onClick={() => {
-          setIsEditing(true);
-        }}
-      >
-        Edit
-      </button>
     </div>
   );
 }

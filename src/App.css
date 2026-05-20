@@ -34,4 +34,11 @@ button {
   border-radius: var(--space-sm);
   width: 10%;
   margin: 0 auto;
+  background-color: #2563eb;
+color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
 }

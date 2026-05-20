@@ -6,6 +6,7 @@
   /* border: var(--border); */
   padding: 0 5% 2% 5%;
   gap: var(--space-md);
+  font-size: 1.3rem;
 }
 
 .education-info {
@@ -21,19 +22,25 @@
   padding: 0 0 0 5%;
 }
 
-.form-container{
+.form-container {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
   padding-top: var(--space-xl);
 }
 
-#add-submit-btn-container{
-  display: flex;
-  gap: var(--space-md);
+.special-btns{
+  margin: 0;
 }
 
-#main-content{
+#add-submit-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.main-content {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
