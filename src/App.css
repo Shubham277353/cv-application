@@ -30,7 +30,7 @@ input {
 input:focus {
   outline: none;
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 button {
@@ -40,16 +40,12 @@ button {
   font-weight: 500;
   background-color: #2c3e50;
   border-radius: var(--space-sm);
-  width: 10%;
   background-color: #2563eb;
   color: white;
-  
 }
 button:hover {
   transform: translateY(-1px);
 }
-
-
 
 .print-btn {
   display: inline-flex;
@@ -74,21 +70,24 @@ button:hover {
 
 @media print {
   /* 1. Force the browser to render background colors and images */
-  body, #root-cv, #root-cv * {
+  body,
+  #root-cv,
+  #root-cv * {
     -webkit-print-color-adjust: exact !important; /* For Chrome, Safari, Edge, Brave */
-    print-color-adjust: exact !important;         /* Standard / Firefox */
+    print-color-adjust: exact !important; /* Standard / Firefox */
   }
 
   /* ... rest of your existing print styles ... */
-  
+
   body * {
     visibility: hidden;
   }
-  
-  #root-cv, #root-cv * {
+
+  #root-cv,
+  #root-cv * {
     visibility: visible;
   }
-  
+
   #root-cv {
     position: absolute;
     left: 0;
@@ -99,5 +98,34 @@ button:hover {
 
   .no-print {
     display: none !important;
+  }
+}
+
+#navbar-container {
+  background: #111827;
+  color: white;
+  padding: 20px 32px;
+
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#navbar-container h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.non-tablet {
+  display: none;
+}
+
+@media (max-width:500px) {
+  .tablet{
+    display: none;
+  }
+  .non-tablet{
+    display: block;
   }
 }

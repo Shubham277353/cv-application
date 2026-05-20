@@ -55,7 +55,7 @@ export default function Education() {
                 Institute : {}
                 <input
                   value={item.institute}
-                  placeholder="Guru gobind college"
+                  placeholder="GGSIPU"
                   type="text"
                   onChange={(e) => {
                     handleChange(index, "institute", e.target.value);
@@ -66,7 +66,7 @@ export default function Education() {
                 {} Course : {}
                 <input
                   value={item.course}
-                  placeholder="MCA"
+                  placeholder="B.Tech"
                   type="text"
                   onChange={(e) => {
                     handleChange(index, "course", e.target.value);

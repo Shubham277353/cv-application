@@ -23,6 +23,5 @@ body {
   box-sizing: border-box;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: var(--space-xl);
   margin-bottom: var(--space-xl);
 }
