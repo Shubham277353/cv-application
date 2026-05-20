@@ -21,8 +21,6 @@ export default function Experience() {
     setInfo(updateInfo);
   }
 
-
-
   function handleMore() {
     const newEmptyObject = {
       compName: "",
@@ -68,7 +66,7 @@ export default function Experience() {
                 <input
                   placeholder="Google"
                   type="text"
-                  value={"Google"}
+                  value={item.compName}
                   onChange={(e) => {
                     handleChange(index, "compName", e.target.value);
                   }}
@@ -79,7 +77,7 @@ export default function Experience() {
                 <input
                   placeholder="SDE2"
                   type="text"
-                  value={info.jobRole}
+                  value={item.jobRole}
                   onChange={(e) => {
                     handleChange(index, "jobRole", e.target.value);
                   }}
@@ -88,8 +86,9 @@ export default function Experience() {
               <label htmlFor="">
                 Responsibility:
                 <input
+                  placeholder="Managed backend APIs and deployment"
                   type="text"
-                  value={info.responsibility}
+                  value={item.responsibility}
                   onChange={(e) => {
                     handleChange(index, "responsibility", e.target.value);
                   }}
@@ -99,7 +98,7 @@ export default function Experience() {
                 Start Date:
                 <input
                   type="date"
-                  value={info.startDate}
+                  value={item.startDate}
                   onChange={(e) => {
                     handleChange(index, "startDate", e.target.value);
                   }}
@@ -177,12 +176,13 @@ export default function Experience() {
         {info.map((item, index) => {
           return (
             <li className="main-content" key={index}>
-              <h2>Google</h2>
+              <h2>{item.compName}</h2>
               <p>
-                <strong>Role:</strong> SDE2
+                <strong>Role:</strong> {item.jobRole}
               </p>
               <p>
-                <strong>Responsibility:</strong> Managed the servers
+                <strong>Responsibility:</strong>
+                {item.responsibility}
               </p>
               <p>Start Date: {item.startDate}</p>
 

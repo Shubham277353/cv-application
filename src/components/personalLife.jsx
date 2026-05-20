@@ -64,18 +64,18 @@ export default function PersonalLife() {
 
   return (
     <div className="personal-info">
-      <h1>{"Shubham Bhandari"}</h1>
+      <h1>{info.name}</h1>
       <hr style={{ borderTop: "1px solid white", width: "70%" }} />
 
       <div className="contact-info">
         <div className="icon-cont">
           <Mail size={20} />
-          <p>{"goluboi@gmail.com"}</p>
+          <p>{info.email}</p>
         </div>
         <p>|</p>
         <div className="icon-cont">
           <Phone size={20} />
-          <p>{7843924832}</p>
+          <p>{info.phone}</p>
         </div>
       </div>
         <button style={{width: "4rem",backgroundColor:"transparent"}}

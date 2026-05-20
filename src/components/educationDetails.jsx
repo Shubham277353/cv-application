@@ -148,10 +148,10 @@ export default function Education() {
       {info.map((item) => {
         return (
           <div className="main-content">
-            <h2>Institute: {"Guru Gobind Singh University"}</h2>
-            <p><strong>Course:</strong> {"MCA"}</p>
-            <p>Start Date: 2026-05-01</p>
-            <p>End Date: 2026-05-01</p>
+            <h2>Institute: {item.institute}</h2>
+            <p><strong>Course:</strong> {item.course}</p>
+            <p>Start Date: {item.startDate}</p>
+            <p>End Date: {item.endDate}</p>
           </div>
         );
       })}
