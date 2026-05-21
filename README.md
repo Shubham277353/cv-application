@@ -8,11 +8,11 @@
 # Screenshots
 ### Form:
 
-<img width="1486" height="972" alt="Screenshot 2026-05-21 121405" src="https://github.com/user-attachments/assets/3d084b82-19e9-4c8e-b83f-5a38da01e03c" />
+<img width="700" height="700" alt="Screenshot 2026-05-21 121405" src="https://github.com/user-attachments/assets/3d084b82-19e9-4c8e-b83f-5a38da01e03c" />
 
 ### CV: 
 
-<img width="1262" height="831" alt="Screenshot 2026-05-21 121553" src="https://github.com/user-attachments/assets/da4c22ce-2b06-4f59-bc40-1d96d3838cb4" />
+<img width="700" height="700" alt="Screenshot 2026-05-21 121553" src="https://github.com/user-attachments/assets/da4c22ce-2b06-4f59-bc40-1d96d3838cb4" />
 
 # What I learned
 - I learned how to use `useState` to create states and how to manage them.
